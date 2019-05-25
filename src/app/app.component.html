@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  </div>
+
+  <div class="container">
+    <div class="card bg-light mb-3">
+<div class="card-body">
+  <p class="card-text">
+    Guess the computer generated random number between 1 and 1000.
+  </p>
+
+</div>
+    </div>
+<div><label for="Your Guess: ">Your Guess: </label>
+  &nbsp;<input type="text" [value]="guess" (input)="guess=$event.target.value" /><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button (click)="verifyguess()" class="btn btn-primary btn-sm">Verify</button>&nbsp;
+<button (click)="initializeGame()" class="btn btn-warning btn-sm">Restart</button>
+</div>
+
+<p *ngIf="deviation<0" class="alert alert-warning">Your guess is higher</p>
+<p *ngIf="deviation>0" class="alert alert-warning">Your guess is lower</p>
+<p *ngIf="deviation===0" class="alert alert-success">Yes! That's it.</p>
+
+  </div>
+  
+
+
+
